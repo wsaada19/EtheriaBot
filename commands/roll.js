@@ -17,7 +17,7 @@ module.exports = {
 						}
 				}
 				let random = Math.floor(Math.random() * Math.floor(max));
-				message.channel.send(`${user} has rolled a ${random} out of ${max}!`)
+				message.channel.send(`**${user}** has rolled a **${random}** out of **${max}**!`)
  				.then(message => console.log(`Sent message: ${message.content}`))
  				.catch(console.error);
 
