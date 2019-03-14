@@ -1,6 +1,6 @@
 module.exports = {
 		name: 'kick',
-		description: "Kicks the specified user!",
+		description: "Kicks the specified user, !<kick> <@user>",
 		async execute(message, args){
 				if(args.length < 1){
 						message.reply("Must enter a user");

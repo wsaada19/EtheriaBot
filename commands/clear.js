@@ -1,6 +1,6 @@
 module.exports = {
 		name: 'clear',
-		description: 'This removes 100 messages in a channel',
+		description: 'This command removes 100 messages in a given channel',
 		execute(message, args){
 				try {
 							message.channel.bulkDelete(100)

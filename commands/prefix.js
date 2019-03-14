@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 module.exports = {
 		name: 'prefix',
-		description: "Changes the prefix for the bot!",
+		description: "Changes the prefix for the bot, !<prefix> <new prefix>",
 		execute(message, args){
 
 				if(!message.member.hasPermission("MANAGE_SERVER")){return message.reply("You don't have permission to change the prefix.")}
