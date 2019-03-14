@@ -5,8 +5,8 @@ module.exports = {
 		description: "Changes the prefix for the bot!",
 		execute(message, args){
 
-				if(!member.hasPermission("MANAGE_SERVER")){return message.reply("You don't have permission to change the prefix.")}
-				if(!arg[0] || arg[0] === 'help'){return "To change the prefix use !<prefix> <new prefix>!"}
+				if(!message.member.hasPermission("MANAGE_SERVER")){return message.reply("You don't have permission to change the prefix.")}
+				if(!args[0] || args[0] === 'help'){return message.reply("To change the prefix use !<prefix> <new prefix>!")}
 
 				let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
 
@@ -14,17 +14,18 @@ module.exports = {
 					prefixes: args[0]
 				};
 
-				fs.writeFile("./prefixes.json", JSON.stringify(prefixes) (err) =>{
+				fs.writeFile("./prefixes.json", JSON.stringify(prefixes), (err) =>{
 						if(err){
 							console.log(err);
 						}
 				})
 
 				let embededMessage = new Discord.RichEmbed()
-				.setColor()
-				.setTitle()
-				.setDescription();
+				.setColor("#097F09")
+				.setTitle("New prefix has been set!")
+				.setDescription(`The new prefix is ${args[0]}`);
 
+				message.channel.send(embededMessage);
 		},
 
 };
