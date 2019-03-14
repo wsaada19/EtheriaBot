@@ -10,7 +10,7 @@ module.exports = {
 
 			switch(args[0]){
 					case "blogs":
-							GetRecentBlogs(message, args);
+							GetHytaleBlogs(message, args);
 							break;
 					case "help":
 							GetHytaleHelp(message, args);
@@ -34,8 +34,16 @@ function GetHytaleBlogs(message, args){
 				if(limit < 1){return message.reply("Integer must be greator than 0");}
 
 				let embededMessage = new Discord.RichEmbed()
-				.setColor("#097F09")
-				.setTitle(`Last ${limit} Hytale blog posts!`);
+				.setColor("#097F09");
+				let title;
+				if(limit == 1){
+						title = `Last Hytale blog post!`;
+						console.log("True");
+				} else {
+						title = `Last ${limit} Hytale blog posts!`;
+						console.log('false');
+				}
+				embededMessage.setTitle(title);
 
 				let $ = cheerio.load(html);
 				try{
