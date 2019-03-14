@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 module.exports = {
 		name: "flip",
 		description: "Flip a coin that can either be heads or tails",
+		permission: "SEND_MESSAGE",
 		execute(message, args){
 				let userName = message.author.username;
 

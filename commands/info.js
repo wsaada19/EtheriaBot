@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 module.exports = {
 		name: 'info',
 		description: 'Displays information about the current discord server',
+		permission: 'SEND_MESSAGE',
 		async execute(message, args) {
 				let name = message.guild.name;
 				let online = await message.guild.members.filter(m => m.presence.status === 'online').size;

@@ -2,6 +2,7 @@ const util = require('../utilities/timeConverter.js');
 module.exports = {
 		name: 'mute',
 		description: 'Mutes a given user, if a time is specified then user is muted that given time period',
+		permission: 'MUTE_MEMBERS',
 		async execute(message, args){
 			if(!message.member.hasPermission("MUTE_MEMBERS")){return message.reply("You don't have permission to mute a user.")}
 

@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 module.exports = {
 		name: 'ping',
 		description: "Returns the latency for the given bot",
+		permission: "SEND_MESSAGE",
 		execute(message, args){
 				let ping = Math.floor(message.client.ping);
 
