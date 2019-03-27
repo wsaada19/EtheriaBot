@@ -1,3 +1,4 @@
+const errorMessage = require('../utilities/errorMessage.js');
 module.exports = {
 		name: 'roll',
 		description: "Roll for a random number from 1 - x, (100 is default)",
@@ -6,7 +7,7 @@ module.exports = {
 
 				let user = message.author.username;
 				let max = (args.length < 1) ? 100:args[0];
-				if(isNaN(max) || max <= 0){return message.reply("Use the format <roll> or <roll> <integer greator than 1>");}
+				if(isNaN(max) || max <= 0){return message.channel.send(errorMessage.getMessage("Invalid use of !roll", "The correct usage is !roll or !roll [integer greator than 1]"));}
 
 				let random = Math.floor(Math.random() * Math.floor(max));
 				try {

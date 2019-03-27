@@ -14,7 +14,6 @@ module.exports = {
 				let embededMessage = new Discord.RichEmbed()
 					.setColor("#097F09")
 					.setDescription(`**${message.member.displayName}** has drawn the **${card.toString()}**!`);
-
 					message.channel.send(embededMessage);
 
 		}

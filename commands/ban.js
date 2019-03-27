@@ -1,13 +1,13 @@
 const fs = require('fs');
 module.exports = {
 		name: 'ban',
-		description: "Bans a user, !ban <@user> <ban reason>",
+		description: "Bans a user, !ban [@user] [ban reason]",
 		permission: "BAN_MEMBERS",
 		async execute(message, args){
 				if(args.length < 1){
 						message.reply("Must enter a username");
 				} else {
-						if(!message.member.hasPermission("BAN_MEMBERS")){return message.reply("You don't have permission for that command");}
+						if(!message.member.hasPermission("BAN_MEMBERS")){return;}
 						let user = args[0];
 						let userObj = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 						if(!userObj){console.log("Could not find user"); return;}

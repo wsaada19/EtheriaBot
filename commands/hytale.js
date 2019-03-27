@@ -1,12 +1,13 @@
 const request = require('request');
 const cheerio = require('cheerio');
 const Discord = require('discord.js');
+const errorMessage = require('../utilities/errorMessage.js');
 module.exports = {
 		name: 'hytale',
-		description: 'Hytale related commands, use !hytale help for more information',
+		description: 'Hytale related commands, use hytale help for more information',
 		permission: "SEND_MESSAGE",
 		execute(message, args){
-			if(!args[0]){return message.reply("Hytale commands include: help, blogs, music");}
+			if(!args[0]){return message.channel.send(errorMessage.getMessage("Invalid Arguments","The correct usage is hytale [help, blogs, music]"));}
 
 			switch(args[0]){
 					case "blogs":
