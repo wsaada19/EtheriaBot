@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const prefixes = require('../prefixes.json');
+const fs = require('fs');
 
 module.exports = (client, member) => {
 
@@ -15,12 +16,18 @@ module.exports = (client, member) => {
 		let embededMessage = new Discord.embededMessage()
 		.setColor("#097F09")
 		.setTitle(`Welcome **${member.userName}** to **${guild.name}**!`)
-		.setDescription(`Happy to have you here! Head on over to #server-information, to learn more about **${guild.name}**.
-			Enter ${prefixes[id].prefixes}help to see a list of all available commands.  Enjoy your stay!`)
+		.setDescription(`Head on over to #server-information, to learn more about **${guild.name}** and read the rules for this server.
+			Enter ${prefixes[id].prefixes}help to see a list of all available commands. If you're interested in joining the
+			team, check out our open positions in #apply :grinning:`)
 		.setThumbnail(guild.iconURL);
 
 		let channel = guild.channels.get(config[member.guild.id].welcomeChannel);
-		if(channel){channel.send(embededMessage);}
+		if(channel)
+		{
+				channel.send(embededMessage);
+		} else {
+				console.log("Welcome channel not found!");
+		}
 
 
 

@@ -1,6 +1,6 @@
 module.exports = {
 		name: 'clear',
-		description: 'This command removes 100 messages in a given channel',
+		description: 'Removes last 100 messages in the current channel',
 		permission: 'MANAGE_SERVER',
 		execute(message, args){
 				if(!message.member.hasPermission("MANAGE_SERVER")){return message.reply("You don't have permission to use this command");}

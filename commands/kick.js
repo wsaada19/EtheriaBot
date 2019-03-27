@@ -9,6 +9,9 @@ module.exports = {
 						if(!message.member.hasPermission("KICK_MEMBERS")){return message.reply("You don't have permission for that command");}
 						let user = args[0];
 						let userObj = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+						if(userObj.user.bot){return message.reply("You can't kick a bot");}
+						if(userObj.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
+
 						if(!userObj){console.log("Could not find user"); return;}
 						try {
 								await userObj.kick();

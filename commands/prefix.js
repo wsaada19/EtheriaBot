@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 module.exports = {
 		name: 'prefix',
-		description: "Changes the prefix for the bot, !<prefix> <new prefix>",
+		description: "Changes the prefix for using commands, !prefix <new prefix>",
 		permission: "MANAGE_SERVER",
 		execute(message, args){
 
@@ -12,7 +12,9 @@ module.exports = {
 				let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
 
 				prefixes[message.guild.id] = {
-					prefixes: args[0]
+					prefixes: args[0],
+					welcomeToggle: prefixes[message.guild.id].welcomeToggle,
+					welcomeChannel: prefixes[message.guild.id].welcomeChannel
 				};
 
 				fs.writeFile("./prefixes.json", JSON.stringify(prefixes), (err) =>{

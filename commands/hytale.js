@@ -38,10 +38,8 @@ function GetHytaleBlogs(message, args){
 				let title;
 				if(limit == 1){
 						title = `Last Hytale blog post!`;
-						console.log("True");
 				} else {
 						title = `Last ${limit} Hytale blog posts!`;
-						console.log('false');
 				}
 				embededMessage.setTitle(title);
 

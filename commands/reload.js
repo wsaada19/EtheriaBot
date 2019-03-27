@@ -1,6 +1,6 @@
 module.exports = {
 		name: 'reload',
-		description: 'reloads a given command, <reload> <cmd name>',
+		description: 'reloads a given command, !reload <cmd name>',
 		permission: 'MANAGE_SERVER',
 		execute(message, args) {
 			if(!message.member.hasPermission("MANAGE_SERVER")){return message.reply("You don't have permission to use this command");}

@@ -10,11 +10,12 @@ module.exports = (client, message) => {
 			// Check for prefix
 			if(!prefixes[message.guild.id]){
 					prefixes[message.guild.id] = {
-						prefixes: config.prefix
+						prefixes: config.prefix,
+						welcomeMessage: prefixes[message.guild.id],
+						welcomeToggle: true
 					};
 			}
 			let prefix = prefixes[message.guild.id].prefixes;
-
 			if(!message.content.startsWith(prefix)){return;}
 
 			let args = message.content.substring(1).split(' ');

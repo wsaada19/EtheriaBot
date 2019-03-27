@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 module.exports = {
 		name: 'info',
-		description: 'Displays information about the current discord server',
+		description: 'Displays information about this discord server',
 		permission: 'SEND_MESSAGE',
 		async execute(message, args) {
 				let name = message.guild.name;

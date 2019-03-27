@@ -1,7 +1,7 @@
 module.exports = {
 		name: 'roll',
 		description: "Roll for a random number from 1 - x, (100 is default)",
-		permission: "SEND_MESSAGE",
+		permission: "SEND_MESSAGES",
 		async execute(message, args){
 
 				let user = message.author.username;

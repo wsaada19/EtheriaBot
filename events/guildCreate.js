@@ -9,4 +9,5 @@ module.exports = (client, guild) => {
 				welcomeToggle: false,
 				welcomeChannel: ''
 		}
+
 }
