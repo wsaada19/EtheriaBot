@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 module.exports = {
 		name: 'prefix',
-		description: "Changes the prefix for using commands, !prefix <new prefix>",
+		description: "Changes the prefix for using commands, prefix <new prefix>",
 		permission: "MANAGE_SERVER",
 		execute(message, args){
 

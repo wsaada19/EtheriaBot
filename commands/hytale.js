@@ -19,9 +19,6 @@ module.exports = {
 					case "music":
 							GetHytaleMusic(message, args);
 							break;
-					case "tweet":
-							GetHytaleTweet(message, args);
-							break;
 			}
 		}
 }
@@ -78,8 +75,4 @@ function GetHytaleHelp(message, args){
 		.addField("tweet", "Retrieves Hytale's most recent tweet");
 
 		message.channel.send(embededMessage);
-}
-
-function GetHytaleTweet(message, args){
-
 }

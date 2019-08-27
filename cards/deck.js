@@ -5,8 +5,8 @@ let cards;
 function Deck(){
 		var self = this;
 		cards = new Array();
-		Card.prototype.suites.forEach(function(suite) {
-				Card.prototype.faces.forEach(function(face) {
+		Card.suites().forEach(function(suite) {
+				Card.faces().forEach(function(face) {
 						cards.push(new Card(face, suite));
 				});
 		});
